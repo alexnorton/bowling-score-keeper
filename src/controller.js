@@ -7,8 +7,7 @@ function Controller() {
 
 Controller.prototype.addPlayer = function(name) {
   // Check the player name isn't empty
-  if(name != ''){
-
+  if(name && name != '' && !name.match(/^ *$/)) {
     // Check we're not trying to add more than 6 players
     if(this.players.length < 6) {
       // Instantiate a new Player object
@@ -45,6 +44,7 @@ Controller.prototype.addScore = function(score) {
     if(!player.addScore(scoreVal))
       return false;
 
+    // If that's the end of the frame move to the next player
     if(player.isFrameOver()) {
       this.currentPlayer++;
       if(this.currentPlayer >= this.players.length) {
@@ -59,14 +59,17 @@ Controller.prototype.addScore = function(score) {
 }
 
 Controller.prototype.getTotal = function(player) {
+  // Return the score of the given player
   return this.players[player].getScore();
 }
 
 Controller.prototype.getCurrentPlayer = function() {
+  // Return the index of the current player
   return this.currentPlayer;
 }
 
 Controller.prototype.getCurrentRoll = function() {
+  // Return the index of the current roll (next roll to be made) of the current player
   return this.players[this.currentPlayer].getRolls().length;
 }
 
@@ -76,15 +79,17 @@ Controller.prototype.isGameOver = function() {
 }
 
 Controller.prototype.getWinner = function() {
-  if(!this.isGameOver)
+  // If the game isn't over we don't have a winner
+  if(!this.isGameOver())
     return false;
 
   var winner;
 
+  // Find the player with the highest score
   this.players.forEach(function(player) {
     if(!(winner && winner.getScore() > player.getScore()))
       winner = player;
-  });
+    })
 
   return winner.name;
 }

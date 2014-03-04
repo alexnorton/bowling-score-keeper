@@ -1,77 +1,82 @@
 h1 img {
-	height: 36px;
-	vertical-align: bottom;
+  height: 36px;
+  vertical-align: bottom;
 }
 
 .container {
-	width: 750px;
+  width: 750px;
 }
 
 #error {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 #add-players {
-	padding-bottom: 20px
+  padding-bottom: 20px
 }
 
 #player-name-input {
-	width: 522px;
-	display: inline;
+  width: 522px;
+  display: inline;
 }
 
 #add-players button {
-	margin-top: -2px;
+  margin-top: -2px;
 }
 
 #game {
-	display: none;
+  display: none;
 }
 
 #game table {
-	table-layout: fixed;
+  table-layout: fixed;
 }
 
 #game table thead tr th:nth-child(n+2):nth-child(-n+11) {
-	text-align: center;
+  text-align: center;
 }
 
 #game table thead tr th:nth-child(n+2):nth-child(-n+10) {
-	width: 50px;
+  width: 50px;
 }
 
 #game table thead tr th:nth-child(n+11) {
-	width: 75px;
+  width: 75px;
 }
 
 #game table tbody tr td {
-	text-align: center;
-	vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #game table tbody tr td:first-child, #game table tbody tr td:last-child {
-	text-align: left;
+  text-align: left;
 }
 
 #game table tbody tr td.current {
-	background-color: red;
+  background-color: red;
 }
 
 #score {
-	display: none;
+  display: none;
 }
 
 #score-input {
-	display: inline;
-	width: 100px;
+  display: inline;
+  width: 100px;
 }
 
 #score-button {
-	margin-top: -2px;
+  margin-top: -2px;
 }
 
 #winner {
-	display: none;
-	text-align: center;
-	font-size: 24px;
+  display: none;
+  text-align: center;
+  font-size: 24px;
+}
+
+#winner img {
+  margin-left: auto;
+  margin-right: auto;
 }
